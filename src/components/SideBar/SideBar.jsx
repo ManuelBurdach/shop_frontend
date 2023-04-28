@@ -24,8 +24,10 @@ const SideBar = () => {
   };
   const logout = async () => {
     const logoutResult = await fetch(FETCH_LINK + "logout", { credentials: "include" });
-    const guest = await logoutResult.json();
-    // setUser(guest);
+    setUser((prev) => {
+      prev.isLoggedIn = false;
+      return prev;
+    });
   };
   return (
     <div className="SideBar">

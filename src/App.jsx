@@ -4,6 +4,7 @@ import TopBar from "./components/topBar/TopBar.jsx";
 import UserContext from "./context/UserContext.js";
 import SideBar from "./components/SideBar/SideBar";
 import Home from "./pages/Home/Home";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [user, setUser] = useState({ firstname: "Guest", isLoggedIn: false });
@@ -28,7 +29,10 @@ function App() {
         <SideBar />
         <div className="TopBarAndPage">
           <TopBar />
-          <Home />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Home />} />
+          </Routes>
         </div>
       </UserContext.Provider>
     </div>

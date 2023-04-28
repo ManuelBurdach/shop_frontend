@@ -1,0 +1,26 @@
+.SideBar {
+  width: 240px;
+  border: 1px solid;
+  padding: 1rem;
+}
+
+.SideBar > * {
+  margin: 2rem 0;
+}
+
+.SideBar form input {
+  margin: 5px 5px 5px 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.logout {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.089);
+  padding: 1rem;
+  margin: 0 -1rem;
+  cursor: pointer;
+}

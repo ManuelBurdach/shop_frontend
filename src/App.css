@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1400px;
+}
+
+.TopBarAndPage {
+  width: 80%;
+}
+
+.Page {
+  border: 1px solid;
+  padding: 1rem;
+}
+
+.active {
+  color: red;
+}

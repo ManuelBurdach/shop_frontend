@@ -22,10 +22,10 @@ const SideBar = () => {
     });
     if (loginResult.ok) setUser(await loginResult.json());
   };
-  const logout = async (e) => {
+  const logout = async () => {
     const logoutResult = await fetch(FETCH_LINK + "logout", { credentials: "include" });
     const guest = await logoutResult.json();
-    setUser(guest);
+    // setUser(guest);
   };
   return (
     <div className="SideBar">

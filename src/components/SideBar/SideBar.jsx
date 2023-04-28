@@ -23,7 +23,12 @@ const SideBar = () => {
     if (loginResult.ok) setUser(await loginResult.json());
   };
   const logout = async () => {
-    const logoutResult = await fetch(FETCH_LINK + "logout", { credentials: "include" });
+    const logoutResult = await fetch(FETCH_LINK + "logout", {
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
     setUser({ firstname: "Guest", isLoggedIn: false });
   };
   return (

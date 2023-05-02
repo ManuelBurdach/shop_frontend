@@ -9,14 +9,11 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   const [user, setUser] = useState({ firstname: "Guest", isLoggedIn: false });
   const FETCH_LINK =
-    import.meta.env.VITE_BACKEND +
-    import.meta.env.VITE_API_VERSION +
-    import.meta.env.VITE_USER +
-    "verify";
+    import.meta.env.VITE_BACKEND + import.meta.env.VITE_API_VERSION + import.meta.env.VITE_USER;
 
   useEffect(() => {
     const verifyUser = async () => {
-      const user = await fetch(FETCH_LINK, {
+      const user = await fetch(FETCH_LINK + "verify", {
         credentials: "include",
       });
       if (user.ok) setUser(await user.json());

@@ -24,12 +24,12 @@ const SideBar = () => {
   };
   const logout = async () => {
     const logoutResult = await fetch(FETCH_LINK + "logout", {
+      method: "POST",
       credentials: "include",
-      headers: {
-        "content-type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     });
-    setUser({ firstname: "Guest", isLoggedIn: false });
+    const guest = await logoutResult.json();
+    setUser(guest);
   };
   return (
     <div className="SideBar">
